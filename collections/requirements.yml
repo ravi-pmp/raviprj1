@@ -3,4 +3,5 @@ collections:
   - name: community.general
   - version: 4.8.0
   - source: https://aah1.ravi.local
+  - verify: disable
     
