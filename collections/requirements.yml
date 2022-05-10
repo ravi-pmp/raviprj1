@@ -2,4 +2,5 @@ collections:
   # Install a collection from Ansible Galaxy.
   - name: community.general
   - version: 4.8.0
+  - source: https://aah1.ravi.local
     
