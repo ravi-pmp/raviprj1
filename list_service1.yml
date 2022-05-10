@@ -1,0 +1,16 @@
+---
+- name: my win
+  hosts: all
+  gather_facts: no
+  tasks:
+
+          # - name: Get info for all installed services
+          #   ansible.windows.win_service_info:
+          #  register: service_info
+    
+    - name: Gather list
+      win_shell: Get-Service | Sort-Object Status -Descending
+      register: service_list
+
+    - debug:
+        msg: "{{ service_list.stdout.split('\n') }}"

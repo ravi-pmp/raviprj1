@@ -1,0 +1,10 @@
+---
+- name: my win
+  hosts: all
+  tasks:
+
+    - name: Ensure user bob is absent
+      ansible.windows.win_user:
+        name: bob
+        state: absent
+

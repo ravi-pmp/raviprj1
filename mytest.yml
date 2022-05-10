@@ -1,0 +1,10 @@
+---
+- name: compress
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: compress
+      community.general.archive:
+        path: /tmp/etc
+        dest: /tmp/etc.tgz
+        format: gz

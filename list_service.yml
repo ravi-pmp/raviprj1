@@ -1,0 +1,25 @@
+---
+- name: my win
+  hosts: all
+  gather_facts: no
+  tasks:
+
+    - name: Get info for all installed services
+      ansible.windows.win_service_info:
+      register: service_info
+    
+    - name: output
+      #debug: msg={{service_info[services]}} 
+      debug: msg={{service_info}} 
+      #    - name: Get info for a single service
+      #      ansible.windows.win_service_info:
+      #        name: WinRM
+      #      register: service_info
+      #    
+      #    - name: Get info for a service using its display name
+      #      ansible.windows.win_service_info:
+      #        name: Windows Remote Management (WS-Management)
+      #    
+      #    - name: Find all services that start with 'win'
+      #      ansible.windows.win_service_info:
+      #        name: win*
